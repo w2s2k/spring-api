@@ -4,8 +4,6 @@ mysql:
     - "3306:3306"
   environment:
     - MYSQL_USER=root
-    - MYSQL_PASSWORD=
-    - MYSQL_DATABASE=spring_api
-    - MYSQL_ROOT_PASSWORD=
+    - MYSQL_DATABASE=salim
   volumes:
     - "./conf.d:/etc/mysql/conf.d:ro"
