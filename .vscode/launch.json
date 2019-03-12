@@ -5,6 +5,13 @@
             "name": "CodeLens (Launch) - Application",
             "request": "launch",
             "mainClass": "api.Application",
+            "projectName": "spring"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Application",
+            "request": "launch",
+            "mainClass": "api.Application",
             "projectName": "complete"
         },
         {

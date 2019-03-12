@@ -1,11 +1,15 @@
 package api.contacts;
+
 import api.contacts.Contact;
 import io.swagger.annotations.ApiOperation;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller // This means that this class is a Controller
@@ -17,8 +21,15 @@ public class ContactResource {
 
 	@ApiOperation("Return all contacts")
 	@GetMapping("")
-	public @ResponseBody Iterable<Contact> getAllcontacts() {
+	public @ResponseBody ResponseEntity<Iterable<Contact>> getAllcontacts() {
 		// This returns a JSON or XML with the contacts
-		return contactRepository.findAll();
+		Iterable<Contact> list = contactRepository.findAll();
+		return new ResponseEntity<Iterable<Contact>>(list, HttpStatus.OK);
+	}
+
+	@ApiOperation("Return contact by Id")
+	@GetMapping("/{id}")
+	public @ResponseBody Contact getContactById(@PathVariable("id") Integer id) {
+		return contactRepository.findById(id).get();
 	}
 }
