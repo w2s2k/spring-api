@@ -46,6 +46,4 @@ target/
 .vscode	
 bin/main	
 gradle/
-target	
-.classpath	
-.project	
+target

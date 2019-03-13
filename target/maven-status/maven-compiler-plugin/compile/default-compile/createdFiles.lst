@@ -1,5 +1,0 @@
-api\Application.class
-api\contacts\ContactRepository.class
-api\swagger\SwaggerConfig.class
-api\contacts\Contact.class
-api\contacts\ContactController.class
