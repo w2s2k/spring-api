@@ -1,9 +1,0 @@
-mysql:
-  image: mysql
-  ports:
-    - "3306:3306"
-  environment:
-    - MYSQL_USER=root
-    - MYSQL_DATABASE=salim
-  volumes:
-    - "./conf.d:/etc/mysql/conf.d:ro"
